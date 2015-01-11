@@ -53,3 +53,10 @@ Stop devstack and restart
 $ ./unstack.sh
 $ OFFLINE=True ./stack.sh
 ```
+
+or...
+
+```
+$ sudo losetup -f /opt/stack/data/stack-volumes-backing-file
+$ cd ./devstack && ./rejoin-stack.sh
+```
