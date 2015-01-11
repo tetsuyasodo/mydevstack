@@ -60,3 +60,25 @@ or...
 $ sudo losetup -f /opt/stack/data/stack-volumes-backing-file
 $ cd ./devstack && ./rejoin-stack.sh
 ```
+
+Other components
+----------------
+* sahara
+```
+# Enable Sahara
+SAHARA_BRANCH=${SAHARA_BRANCH:-stable/juno}
+ENABLED_SERVICES+=,sahara
+#enable_service sahara
+```
+
+and append the following line in ~/devstack/files/apts/horizon
+```
+apache2 # NOPRIME
+gettext ### for sahara
+libapache2-mod-wsgi # NOPRIME
+```
+
+* LBaaS
+```
+enable_service q-lbaas
+```
