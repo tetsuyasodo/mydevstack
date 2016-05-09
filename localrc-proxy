@@ -1,0 +1,26 @@
+HOST_IP=10.0.45.100
+#PUBLIC_INTERFACE=eth0
+
+# Logging
+DEST=/opt/stack
+LOGFILE=$DEST/logs/stack.sh.log
+SCREEN_LOGDIR=$DEST/logs/screen
+
+# Credentials
+ADMIN_PASSWORD=openstack
+MYSQL_PASSWORD=openstack
+RABBIT_PASSWORD=openstack
+SERVICE_PASSWORD=openstack
+SERVICE_TOKEN=tokentoken
+
+# Neutron - Networking Service
+disable_service n-net
+enable_service q-svc
+enable_service q-agt
+enable_service q-l3
+enable_service q-dhcp
+enable_service q-meta
+enable_service q-metering
+enable_service neutron
+
+enable_plugin freezer https://git.openstack.org/openstack/freezer master
