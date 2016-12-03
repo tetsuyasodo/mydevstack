@@ -31,6 +31,9 @@ Setup OS
 $ apt-get update
 $ apt-get upgrade
 $ apt-get install git
+$ git config --global url."https://".insteadOf git://
+$ export http_proxy=http://xxx:8080
+$ export https_proxy=http://xxx:8080
 ```
 
 Git cloning
